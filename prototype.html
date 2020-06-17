@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <title>What makes you click?</title>
+</head>
+
+<body>
+
+    <div id="prototypeglitch"></div>
+    <div id="prototypeonthul"></div>
+    <div id="prototypesecret"></div>
+    <div id="prototypecoinfall"></div>
+    <div id="prototypehendel"></div>
+    <video id="prototypestartscherm">
+        <source src="video/prototype startscherm.mp4" type="video/mp4">
+    </video>
+
+    <a href="https://www.vpro.nl/programmas/tegenlicht/kijk/afleveringen/2016-2017/what-makes-you-click.html"><div class="docu"></div></a>
+
+    <script>
+        const video = document.getElementById('prototypestartscherm');
+        const glitch = document.getElementById("prototypeglitch");
+        const onthul = document.getElementById("prototypeonthul");
+        const secret = document.getElementById("prototypesecret");
+        const coin = document.getElementById("prototypecoinfall");
+        const hendel = document.getElementById("prototypehendel");
+
+        document.body.addEventListener("mousemove", function () {
+            video.play();
+        })
+
+        glitch.addEventListener("click", function(){
+            changeVideo('prototype glitch');
+        })        
+
+        onthul.addEventListener("click", function(){
+            changeVideo('prototype onthul');
+        })        
+
+        secret.addEventListener("click", function(){
+            changeVideo('prototype secret');
+        })  
+
+         coin.addEventListener("click", function(){
+            changeVideo('prototype coinfall');
+        })           
+        
+        hendel.addEventListener("click", function(){
+            changeVideo('prototype hendel');
+        })    
+
+        function changeVideo(url){
+            document.getElementsByTagName('source')[0].src = "video/" + url + ".mp4";
+            video.load();
+            video.play();
+            console.log(url)
+        }
+    </script>
+</body>
+
+</html>
